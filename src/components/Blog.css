@@ -1,0 +1,7 @@
+.blog-thumbnail__wrap {
+    border-radius: 5px;
+    /* align-items: stretch; */
+    min-height: 275px;
+    display: flex;
+    padding-bottom: 0;
+}
