@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './About.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub, faJs } from '@fortawesome/free-brands-svg-icons';
 import Experience from './Experience';
 import Button from '@mui/material/Button';
 import ProductCategories from '../modules/views/HobbyCategories';
@@ -35,69 +35,103 @@ const About = () => {
             }
         };
 
-        // const typingTimeout = setTimeout(handleTyping, isDeleting ? 50 : 150);
+        const typingTimeout = setTimeout(handleTyping, isDeleting ? 50 : 150);
 
-        // return () => clearTimeout(typingTimeout);
+        return () => clearTimeout(typingTimeout);
     }, [charIndex, isDeleting, currentTextIndex, texts]);
 
     return (
         <>
             <section className="section top work-about">
                 <div className="static-contain">
-                    <div className="text-contain">
-                        <h1 className="animated-text">{displayedText}<span className="cursor">|</span><br /></h1>
-                        <p>A software engineer with three years of experience, specializing in Java, JavaScript, React, SQL.<br />‍<br />
-                            Adept at collaborating with diverse teams to develop creative technical solutions for complex software engineering issues.
-                        </p>
-                        <Button variant="contained" color="success" className="btn work-primary w-button">
-                            Download Resume
-                        </Button>
+                    <div className='about'>
+                        <div className="text-contain">
+                            <h1 className="animated-text"><span>&lt;</span>{displayedText}<span className="cursor">|</span><span> /&gt;</span><br /></h1>
+                            <p>A software engineer with three years of experience, specializing in Java, JavaScript, React, SQL.<br />‍<br />
+                                Adept at collaborating with diverse teams to develop creative technical solutions for complex software engineering issues.
+                            </p>
+
+                            <Button
+                                variant="contained"
+                                color="success"
+                                className="btn work-primary w-button"
+                                sx={{ marginTop: 2 }}
+                                href={require("../assets/Neha_Resume.pdf")}
+                                target="_blank"
+                            >
+                                View My Resume
+                            </Button>
+                        </div>
+                        <div className='social-icon'>
+                            <a href="mailto:your-email@example.com" target="__blank">
+                                <img src={require("../assets/gmail.png")} alt="gmail" className="img-social" />
+                            </a>
+                            <a href="https://www.linkedin.com/in/nehareddyv" target="__blank">
+                                <img src={require("../assets/linkedin.png")} alt="linkedin" className="img-social" />
+                            </a>
+                            <a href="https://github.com/NehaReddyV" target="__blank">
+                                <img src={require("../assets/github.png")} alt="github" className="img-social" />
+                            </a>
+                            <a href="https://leetcode.com/u/nehareddyvadde/" target="__blank">
+                                <img src={require("../assets/leetcode.png")} alt="leetcode" className="img-social" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
-            <p> Social Media Icons</p>
-            <div>
-                <a href="mailto:your-email@example.com">
-                    <FontAwesomeIcon icon={faEnvelope} />
-                </a>
-                <a href="https://www.linkedin.com/in/nehareddyv">
-                    <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-                <a href="https://github.com/NehaReddyV">
-                    <FontAwesomeIcon icon={faGithub} />
-                </a>
-            </div>
             {/* Rotate this section animate */}
             <div className="tools-section">
                 <div className="static-contain">
+                    <h2 className="section-title">Skills</h2>
                     <div className="tools-grid">
                         <div className="logo-wrap">
-                            <img src={require('../assets/HTML.jpg')} loading="lazy" alt="" className="tool-logo" />
+                            <img src={require('../assets/html.png')} loading="lazy" alt="HTML5" className="tool-logo" />
                         </div>
                         <div className="logo-wrap">
-                            <img src={require('../assets/Css.jpg')} loading="lazy" alt="" className="tool-logo" />
+                            <img src={require('../assets/css.png')} loading="lazy" alt="CSS3" className="tool-logo" />
                         </div>
                         <div className="logo-wrap">
-                            {/* <img src="https://cdn.prod.website-files.com/5cd989a4d99e0749be50103e/5f48126aa8836377857dd6bf_zapier-logo.png" loading="lazy" alt="" className="tool-logo"> */}
+                            <img src={require('../assets/Sass.png')} loading="lazy" alt="Sass" className="tool-logo" />
                         </div>
                         <div className="logo-wrap">
-                            {/* <img src="https://cdn.prod.website-files.com/5cd989a4d99e0749be50103e/5f4812da3f79001dd39afcd4_parabola-logo.png" loading="lazy" alt="" className="tool-logo"> */}
+                            <img src={require('../assets/javascript.png')} loading="lazy" alt="JavaScript" className="tool-logo" />
                         </div>
                         <div className="logo-wrap">
-                            {/* <img src="https://cdn.prod.website-files.com/5cd989a4d99e0749be50103e/5f48130cd848613d6210a208_mapbox.logo.png" loading="lazy" alt="" className="tool-logo"> */}
+                            <img src={require('../assets/java.png')} loading="lazy" alt="Java" className="tool-logo" />
+                        </div>
+                        <div className="logo-wrap">
+                            <img src={require('../assets/python.png')} loading="lazy" alt="Java" className="tool-logo" />
+                        </div>
+                        <div className="logo-wrap">
+                            <img src={require('../assets/mysql.png')} loading="lazy" alt="MySQL" className="tool-logo" />
+                        </div>
+                        <div className="logo-wrap">
+                            <img src={require('../assets/react.png')} loading="lazy" alt="React" className="tool-logo" />
+                        </div>
+                        <div className="logo-wrap">
+                            <img src={require('../assets/node.png')} loading="lazy" alt="Node JS" className="tool-logo" />
+                        </div>
+                        <div className="logo-wrap">
+                            <img src={require('../assets/figma.png')} loading="lazy" alt="Figma" className="tool-logo" />
+                        </div>
+                        <div className="logo-wrap">
+                            <img src={require('../assets/Docker.png')} loading="lazy" alt="Docker" className="tool-logo" />
+                        </div>
+                        <div className="logo-wrap">
+                            {/* <img src={require('../assets/mysql.png')} loading="lazy" alt="MySQL" className="tool-logo" /> */}
                         </div>
                     </div>
                 </div>
             </div>
-            <section id="experience" className="home-section wg-experience">
+            <section id="experience" className="section wg-experience">
                 <div className="static-contain">
                     <Experience />
                 </div>
             </section>
             {/* <section id="experience" className="section"> */}
-                <div className="static-contain">
-                    <ProductCategories />
-                </div>
+            <div className="static-contain">
+                <ProductCategories />
+            </div>
             {/* </section> */}
         </>
     );

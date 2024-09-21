@@ -58,7 +58,7 @@
   grid-column-gap: 24px;
   grid-row-gap: 16px;
   grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
   align-items: center;
   justify-items: center;
@@ -74,8 +74,13 @@
 }
 
 .tool-logo {
-  /* filter: saturate(0%); */
+  filter: saturate(0%);
   max-height: 40px;
+  transition: filter 0.3s ease-in-out;
+}
+
+.tool-logo:hover {
+  filter: saturate(100%);
 }
 
 .cursor {
@@ -84,8 +89,32 @@
   animation: blink 0.7s steps(1) infinite;
 }
 
-/* @keyframes blink {
+@keyframes blink {
   50% {
       opacity: 0;
   }
-} */
+}
+
+.img-social {
+  width: 2em;
+  height: 2em;
+  transition: transform 0.3s ease-in-out;
+}
+
+.img-social:hover {
+  transform: scale(1.2);
+}
+
+.social-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

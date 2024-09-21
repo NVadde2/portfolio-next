@@ -16,7 +16,7 @@ function App() {
       <div className="static-body bg--work-solid">
         <Routes>
           <Route
-            path="/"
+            path="/portfolio"
             element={<About />}
           />
           <Route
