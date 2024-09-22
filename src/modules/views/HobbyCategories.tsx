@@ -105,11 +105,9 @@ const images = [
 
 export default function ProductCategories() {
     return (
-        <Container component="section" sx={{ mt: 8, mb: 4 }}>
-            <Typography variant="h4" align="center" component="h2">
-                In My Element
-            </Typography>
-            <Box sx={{ mt: 8, display: 'flex', flexWrap: 'wrap' }}>
+        <Container component="section" className='section'>
+            <h2>In My Element</h2>
+            <Box sx={{ mt: 4, display: 'flex', flexWrap: 'wrap' }}>
                 {images.map((image) => (
                     <ImageIconButton
                         key={image.title}

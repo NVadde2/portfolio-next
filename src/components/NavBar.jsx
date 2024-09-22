@@ -70,7 +70,7 @@ const NavBar = () => {
         </div>
       </div>
       <div className="nav__link-wrapper">
-        <Link to="/" class="nav__links w-inline-block"><div>About</div></Link>
+        <Link to="/portfolio" class="nav__links w-inline-block"><div>About</div></Link>
         <Link to="/projects" class="nav__links w-inline-block"><div>Projects</div></Link>
         <Link to="/blog" class="nav__links w-inline-block"><div>Blog</div></Link>
         <Link to="/contact" class="nav__links w-inline-block"><div>Contact</div></Link>

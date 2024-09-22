@@ -63,6 +63,7 @@
   align-items: center;
   justify-items: center;
   display: grid;
+  margin-top: 14px;
 }
 
 .logo-wrap {

@@ -81,7 +81,7 @@ const About = () => {
             </section>
             {/* Rotate this section animate */}
             <div className="tools-section">
-                <div className="static-contain">
+                <div className="static-contain ">
                     <h2 className="section-title">Skills</h2>
                     <div className="tools-grid">
                         <div className="logo-wrap">

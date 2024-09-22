@@ -18,8 +18,11 @@
             "endDate": "Present",
             "workLocation": "Basking Ridge, NJ",
             "description": [
-                "Write, review and maintain code primarily in JavaScript, HTML, and CSS. Core contributor to the project in React, implementing complex UI components, including accessibility remediations and features.",
-                "Prototype, experiment, and create demos in Figma to find the right solutions."
+                "Contributed to the design and development of the platform services website, used by 100+ end users, by building and maintaining complex UI components in React while ensuring cross-browser compatibility and responsive design.",
+                "Mastered JavaScript, HTML5, and CSS3 to optimize website performance and user experience.",
+                "Prototyped and experimented with design solutions in Figma, leading to successful implementation.",
+                "Integrated backend RESTful APIs with front-end React applications, ensuring efficient data flow.",
+                "Adhered to best practices in documentation, unit and integration testing, delivering high-quality, maintainable code."
             ],
             "skills": [
                 "JavaScript",
@@ -184,7 +187,8 @@
                     "name": "Travis Howard",
                     "avatar": "/static/images/avatar/2.jpg"
                 }
-            ]
+            ],
+            "date": "March 26, 2023"
         },
         {
             "id": 2,
@@ -197,7 +201,8 @@
                     "name": "Erica Johns",
                     "avatar": "/static/images/avatar/6.jpg"
                 }
-            ]
+            ],
+            "date": "March 10, 2023"
         },
         {
             "id": 3,
@@ -210,7 +215,8 @@
                     "name": "Kate Morrison",
                     "avatar": "/static/images/avatar/7.jpg"
                 }
-            ]
+            ],
+            "date": "February 23, 2023"
         }
     ]
 }
