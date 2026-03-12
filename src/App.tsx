@@ -4,7 +4,7 @@ import './App.css';
 import About from './components/About';
 import BlogPost from './components/Blog';
 import Experience from './components/Experience';
-import Latest from './components/MainContent';
+import Contact from './components/Contact';
 import NavBar from './components/NavBar';
 import Projects from './components/Projects';
 
@@ -29,7 +29,7 @@ function App() {
           />
           <Route
             path="/contact"
-            element={<Latest />}
+            element={<Contact />}
           />
         </Routes>
       </div>
