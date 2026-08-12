@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Manual dark mode via .dark class on <html>, toggled by the Zustand store. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-paper: #f7f3ea;
+  --color-paper-raised: #efe9db;
+  --color-ink: #201c16;
+  --color-ink-soft: #55503f;
+  --color-ink-faint: #8b8570;
+  --color-line: #dcd5c2;
+  --color-accent: #a8451f;
+  --color-accent-soft: #c96a3f;
+}
+
+.dark {
+  --color-paper: #15130f;
+  --color-paper-raised: #1d1a14;
+  --color-ink: #f3ede0;
+  --color-ink-soft: #c3bca8;
+  --color-ink-faint: #837c68;
+  --color-line: #322c22;
+  --color-accent: #e08a5c;
+  --color-accent-soft: #c96a3f;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-raised: var(--color-paper-raised);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-ink-faint: var(--color-ink-faint);
+  --color-line: var(--color-line);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+  --font-display: "Fraunces Variable", "Fraunces", serif;
+  --font-sans: "Inter Variable", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+.prose-portfolio {
+  --tw-prose-body: var(--color-ink-soft);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bullets: var(--color-accent);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-line);
+  --tw-prose-hr: var(--color-line);
+  --tw-prose-code: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.prose-portfolio h2,
+.prose-portfolio h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+

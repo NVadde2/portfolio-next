@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Next.js (App Router) + TypeScript + Tailwind CSS v4 + Zustand, statically exported and deployed to GitHub Pages at `nvadde2.github.io/portfolio`.
 
-## Available Scripts
+## Getting started
 
-In the project directory, you can run:
+```bash
+npm install
+npm run dev
+```
 
-### `npm start`
+Open `http://localhost:3000`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Before you deploy — two things need your input
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**1. Contact form.** It's wired to POST to Formspree, but needs your endpoint:
 
-### `npm test`
+1. Create a free account at [formspree.io](https://formspree.io) and add a new form.
+2. Copy `.env.local.example` to `.env.local`.
+3. Paste your form's endpoint into `NEXT_PUBLIC_FORMSPREE_ENDPOINT`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Without this, the form UI still works but submissions won't go anywhere (it'll show a friendly "not wired up yet" message instead of failing silently).
 
-### `npm run build`
+**2. Hobby photos.** The "Outside of work" section on the homepage currently shows placeholder tiles instead of real photos — deliberately, since the old site used generic stock images. To swap in your own:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Drop photos into `public/images/hobbies/` using the filenames listed in `src/data/hobbies.ts`.
+2. In `src/components/hobbies-grid.tsx`, replace the placeholder `<div>` background with a `next/image` pointed at `hobby.image`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Content
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+All copy lives in plain data files — no CMS, no hunting through JSX:
 
-### `npm run eject`
+- `src/data/profile.ts` — name, bio, social links, résumé
+- `src/data/experience.ts` — work history
+- `src/data/projects.ts` — project cards
+- `src/data/skills.ts` — skills, grouped
+- `src/data/hobbies.ts` — hobby tile labels/filenames
+- `content/blog/*.md` — blog posts (markdown with frontmatter: `title`, `tag`, `date`, `description`)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To add a blog post, drop a new `.md` file in `content/blog/` — it's picked up automatically, no registration needed.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deploying
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm run deploy
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This builds a static export (`next build`, `output: "export"` in `next.config.ts`) and pushes the `out/` folder to the `gh-pages` branch via the `gh-pages` package — same mechanism the previous site used, so no GitHub repo settings need to change.
 
-## Learn More
+The site is configured with `basePath: "/portfolio"` since it's hosted as a project page, not a user page. If you ever move it to a custom domain or a root-level page, remove `basePath`/`assetPrefix` from `next.config.ts`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Stack notes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Fonts** are self-hosted via `@fontsource` packages rather than fetched live from Google Fonts at build time — more reliable for a static export with no server.
+- **Dark mode** is a real toggle (not decorative) backed by Zustand + `localStorage`, with an inline script in `layout.tsx` that applies the theme class before hydration to avoid a flash.
+- **Blog** posts are markdown files read at build time via `gray-matter` + rendered with `react-markdown`. No database, no API route (static export can't have API routes).
