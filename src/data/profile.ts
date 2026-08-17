@@ -4,7 +4,7 @@ export const profile = {
   location: "New York, NY",
   email: "nehareddyvadde@gmail.com",
   summary:
-    "Frontend engineer with 4+ years building production UI in React, TypeScript, and Next.js — from insurance workflows handling real policy data to internal platforms used by thousands of engineers. I care about the details that make software feel considered: fast, accessible, and easy to reason about.",
+    "Software engineer with 4+ years of experience across agile teams, designing scalable applications with security, accessibility, and performance at the core. My sweet spot sits right at the intersection of product engineering and Applied AI—whether that’s enforcing deterministic data contracts, establishing agent-governance frameworks, or implementing human-in-the-loop review systems. Above all, I believe great engineering is invisible: it just feels fast, reliable, and effortless to use.",
   tagline:
     "I build interfaces people actually enjoy using.",
   social: {
@@ -21,6 +21,12 @@ export const education = [
     degree: "M.S. in Computer Science",
     school: "University of Illinois Urbana-Champaign",
     date: "Dec 2023",
-    detail: "GPA 3.8",
+    detail: "GPA 3.7 / 4.0",
+  },
+  {
+    degree: "Bachelor of Engineering in Computer Science And Engineering",
+    school: "B. M. S. College of Engineering",
+    date: "Dec 2020",
+    detail: "GPA 3.87 / 4.0",
   },
 ] as const;

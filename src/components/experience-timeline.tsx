@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { experience } from "@/data/experience";
+import { withBasePath } from "@/lib/asset-path";
 
 function duration(start: string, end: string) {
   const startDate = new Date(start);
@@ -37,13 +38,13 @@ export function ExperienceTimeline() {
           <details open={i === 0} className="group">
             <summary className="flex cursor-pointer list-none flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-3">
-                <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded bg-paper-raised">
+                <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded bg-paper-raised">
                   <Image
-                    src={role.logo}
+                    src={withBasePath(role.logo)}
                     alt=""
                     fill
-                    sizes="32px"
-                    className="object-contain p-1"
+                    sizes="40px"
+                    className="object-contain p-1.5"
                   />
                 </div>
                 <div>
@@ -61,7 +62,7 @@ export function ExperienceTimeline() {
               <ChevronIcon className="h-4 w-4 shrink-0 text-ink-faint transition-transform group-open:rotate-180" />
             </summary>
 
-            <div className="mt-4 pl-11">
+            <div className="mt-4 pl-[52px]">
               <ul className="space-y-2 text-sm leading-relaxed text-ink-soft">
                 {role.description.map((line) => (
                   <li key={line} className="flex gap-2">
