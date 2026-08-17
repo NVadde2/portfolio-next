@@ -1,12 +1,13 @@
 import Image from "next/image";
 import type { Project } from "@/data/projects";
+import { withBasePath } from "@/lib/asset-path";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-md border border-line transition-colors hover:border-accent">
       <div className="relative h-40 w-full overflow-hidden bg-paper-raised">
         <Image
-          src={project.image}
+          src={withBasePath(project.image)}
           alt={project.title}
           fill
           sizes="(min-width: 640px) 50vw, 100vw"

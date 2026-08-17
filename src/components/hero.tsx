@@ -1,4 +1,5 @@
 import { profile } from "@/data/profile";
+import { withBasePath } from "@/lib/asset-path";
 
 export function Hero() {
   return (
@@ -14,7 +15,7 @@ export function Hero() {
       </p>
       <div className="mt-8 flex flex-wrap items-center gap-4">
         <a
-          href={profile.resumeHref}
+          href={withBasePath(profile.resumeHref)}
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 border border-ink px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"

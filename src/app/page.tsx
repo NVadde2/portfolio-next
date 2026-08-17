@@ -5,7 +5,7 @@ import { ExperienceTimeline } from "@/components/experience-timeline";
 import { SkillsSection } from "@/components/skills-section";
 import { ProjectCard } from "@/components/project-card";
 import { HobbiesGrid } from "@/components/hobbies-grid";
-import { education } from "@/data/profile";
+import { EducationList } from "@/components/education-list";
 import { projects } from "@/data/projects";
 
 export default function Home() {
@@ -24,16 +24,7 @@ export default function Home() {
       </Section>
 
       <Section index="03" title="Education">
-        <ul className="space-y-3">
-          {education.map((item) => (
-            <li key={item.school} className="flex flex-col gap-0.5">
-              <span className="font-medium text-ink">{item.degree}</span>
-              <span className="text-sm text-ink-soft">
-                {item.school} · {item.date} · {item.detail}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <EducationList />
       </Section>
 
       <Section index="04" title="Selected projects">

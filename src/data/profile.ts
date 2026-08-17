@@ -22,11 +22,13 @@ export const education = [
     school: "University of Illinois Urbana-Champaign",
     date: "Dec 2023",
     detail: "GPA 3.7 / 4.0",
+    logo: "/images/logos/uiuc.png",
   },
   {
     degree: "Bachelor of Engineering in Computer Science And Engineering",
     school: "B. M. S. College of Engineering",
-    date: "Dec 2020",
+    date: "Aug 2020",
     detail: "GPA 3.87 / 4.0",
+    logo: "/images/logos/bmsce.svg",
   },
 ] as const;
