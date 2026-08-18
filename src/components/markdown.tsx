@@ -16,6 +16,19 @@ export function Markdown({ content }: { content: string }) {
               className="rounded-md border border-line"
             />
           ),
+          a: ({ href, children }) => {
+            const isExternal = /^https?:\/\//.test(href ?? "");
+            return (
+              <a
+                href={href}
+                {...(isExternal
+                  ? { target: "_blank", rel: "noreferrer" }
+                  : {})}
+              >
+                {children}
+              </a>
+            );
+          },
         }}
       >
         {content}

@@ -75,3 +75,8 @@ body {
   font-weight: 500;
 }
 
+.prose-portfolio p {
+  text-align: justify;
+  hyphens: auto;
+}
+
