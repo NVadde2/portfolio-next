@@ -8,6 +8,7 @@ export interface Project {
   codeHref?: string;
   demoHref?: string;
   deployHref?: string;
+  hasCaseStudy?: boolean;
   image: string;
 }
 
@@ -20,9 +21,9 @@ export const projects: Project[] = [
       "A virtual peer-tutoring platform built for students, by students — streamlined session booking end to end.",
     techStack: ["React", "Spring Boot", "MySQL", "Azure"],
     date: "Dec 2022",
-    codeHref: "https://gitlab.com/cs40916/fp",
+    codeHref: "https://github.com/NVadde2/tutorly",
     demoHref: "https://www.youtube.com/watch?v=dr29ZyRU9g0",
-    deployHref: "https://tutorly.netlify.app/",
+    hasCaseStudy: true,
     image: "/images/projects/tutorly.png",
   },
   {

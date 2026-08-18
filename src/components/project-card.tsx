@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { withBasePath } from "@/lib/asset-path";
 
@@ -55,6 +56,14 @@ export function ProjectCard({ project }: { project: Project }) {
               >
                 Demo
               </a>
+            )}
+            {project.hasCaseStudy && (
+              <Link
+                href={`/projects/${project.slug}`}
+                className="text-ink-soft underline decoration-line underline-offset-4 hover:text-accent hover:decoration-accent"
+              >
+                Case study
+              </Link>
             )}
             {project.deployHref && (
               <a
