@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Markdown } from "@/components/markdown";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { withBasePath } from "@/lib/asset-path";
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -44,6 +46,18 @@ export default async function BlogPostPage({
       <h1 className="font-display text-3xl font-medium text-ink sm:text-4xl">
         {post.title}
       </h1>
+
+      {post.image && (
+        <div className="relative mt-8 h-56 w-full overflow-hidden rounded-md border border-line sm:h-72">
+          <Image
+            src={withBasePath(post.image)}
+            alt=""
+            fill
+            sizes="(min-width: 768px) 768px, 100vw"
+            className="object-contain bg-paper-raised"
+          />
+        </div>
+      )}
 
       <div className="mt-8">
         <Markdown content={post.content} />

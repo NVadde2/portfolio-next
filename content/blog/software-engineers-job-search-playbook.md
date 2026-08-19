@@ -1,7 +1,7 @@
 ---
 title: "The Software Engineer's Job Search Playbook"
 tag: "Career"
-date: "2024-10-06"
+date: "2023-10-06"
 description: "A streamlined, practical roadmap for mastering technical interviews to soft skills, shared by me."
 ---
 

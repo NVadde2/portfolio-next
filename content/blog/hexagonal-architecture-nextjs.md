@@ -1,8 +1,9 @@
 ---
 title: "Hexagonal Architecture in a Next.js Frontend — Is It Worth It?"
 tag: "Engineering"
-date: "2026-08-19"
+date: "2026-04-10"
 description: "Ports and adapters isn't just backend/DDD folklore — here's what it actually looks like on a React frontend, and when it's worth the ceremony."
+image: "/images/blog/hex-architecture-diagram.svg"
 ---
 
 "Hexagonal architecture" is one of those terms that sounds like it belongs exclusively to backend Java shops doing heavy Domain-Driven Design. I used to think so too — until I ended up building one into a Next.js frontend at work, and figured I'd write down what it actually looks like from the frontend side, since almost nothing online covers that.

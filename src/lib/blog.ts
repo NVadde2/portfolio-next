@@ -12,6 +12,8 @@ export interface BlogPostMeta {
 
 export interface BlogPost extends BlogPostMeta {
   content: string;
+  /** Optional header image shown above the post body (outside the markdown content). */
+  image?: string;
 }
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
@@ -49,5 +51,6 @@ export function getPostBySlug(slug: string): BlogPost | null {
     date: data.date as string,
     description: data.description as string,
     content,
+    image: data.image as string | undefined,
   };
 }

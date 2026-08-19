@@ -18,9 +18,12 @@ export function Markdown({ content }: { content: string }) {
           ),
           a: ({ href, children }) => {
             const isExternal = /^https?:\/\//.test(href ?? "");
+            // Only root-relative paths ("/foo") need basePath prefixing —
+            // leave http(s), mailto:, tel:, and #anchor links untouched.
+            const isRootRelative = href?.startsWith("/") ?? false;
             return (
               <a
-                href={href}
+                href={isRootRelative ? withBasePath(href!) : href}
                 {...(isExternal
                   ? { target: "_blank", rel: "noreferrer" }
                   : {})}

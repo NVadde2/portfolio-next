@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="900" height="420" rx="12" fill="#f7f3ea" stroke="#dcd5c2" stroke-width="1"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#55503f"/>
+    </marker>
+  </defs>
+
+  <!-- Raw API box -->
+  <rect x="20" y="165" width="160" height="70" rx="6" fill="#efe9db" stroke="#dcd5c2"/>
+  <text x="100" y="196" text-anchor="middle" font-size="13" font-weight="600" fill="#201c16">Raw API</text>
+  <text x="100" y="214" text-anchor="middle" font-size="11" fill="#55503f">policy_id, holder_full_name…</text>
+
+  <!-- arrow to adapter -->
+  <line x1="182" y1="200" x2="236" y2="200" stroke="#55503f" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Adapter box -->
+  <rect x="240" y="155" width="180" height="90" rx="6" fill="#efe9db" stroke="#c96a3f" stroke-width="1.5"/>
+  <text x="330" y="190" text-anchor="middle" font-size="13" font-weight="600" fill="#201c16">Adapter</text>
+  <text x="330" y="208" text-anchor="middle" font-size="11" fill="#55503f">validate + map</text>
+  <text x="330" y="224" text-anchor="middle" font-size="11" fill="#55503f">(Zod)</text>
+
+  <!-- arrow to hexagon -->
+  <line x1="422" y1="200" x2="461" y2="200" stroke="#55503f" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Hexagon: domain layer -->
+  <polygon points="500,105 620,105 655,200 620,295 500,295 465,200"
+           fill="#a8451f" fill-opacity="0.12" stroke="#a8451f" stroke-width="2"/>
+  <text x="560" y="192" text-anchor="middle" font-size="14" font-weight="700" fill="#201c16">Domain Layer</text>
+  <text x="560" y="212" text-anchor="middle" font-size="11" fill="#55503f">Policy · Quote · …</text>
+
+  <!-- arrow to components -->
+  <line x1="640" y1="150" x2="705" y2="150" stroke="#55503f" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Components box -->
+  <rect x="710" y="115" width="170" height="70" rx="6" fill="#efe9db" stroke="#dcd5c2"/>
+  <text x="795" y="146" text-anchor="middle" font-size="13" font-weight="600" fill="#201c16">Components</text>
+  <text x="795" y="164" text-anchor="middle" font-size="11" fill="#55503f">/ hooks</text>
+
+  <!-- arrow down to errors -->
+  <line x1="560" y1="297" x2="560" y2="331" stroke="#55503f" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Errors box -->
+  <rect x="460" y="335" width="200" height="60" rx="6" fill="#efe9db" stroke="#dcd5c2"/>
+  <text x="560" y="360" text-anchor="middle" font-size="13" font-weight="600" fill="#201c16">Typed Errors</text>
+  <text x="560" y="378" text-anchor="middle" font-size="11" fill="#55503f">NotFoundError · ValidationError</text>
+
+  <!-- caption labels -->
+  <text x="100" y="255" text-anchor="middle" font-size="10" fill="#8b8570">outside world</text>
+  <text x="560" y="70" text-anchor="middle" font-size="10" fill="#8b8570">never sees raw API shape</text>
+  <text x="795" y="100" text-anchor="middle" font-size="10" fill="#8b8570">only talks to domain types</text>
+</svg>
