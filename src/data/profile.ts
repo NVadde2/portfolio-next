@@ -14,6 +14,7 @@ export const profile = {
     leetcode: "https://leetcode.com/u/nehareddyvadde/",
   },
   resumeHref: "/resume.pdf",
+  previousPortfolioHref: "https://nvadde2.github.io/portfolio/",
 } as const;
 
 export const education = [

@@ -18,6 +18,14 @@ export function Footer() {
           <a href={profile.social.email} className="hover:text-ink">
             Email
           </a>
+          <a
+            href={profile.previousPortfolioHref}
+            className="hover:text-ink"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Previous version
+          </a>
         </div>
       </div>
     </footer>
