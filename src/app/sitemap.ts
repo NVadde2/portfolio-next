@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 
 // Not process.env.NEXT_PUBLIC_BASE_PATH here — sitemap URLs need the full
 // deployed origin, not just the basePath.
-const BASE_URL = "https://nvadde2.github.io/portfolio";
+const BASE_URL = "https://nvadde2.github.io/portfolio-next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

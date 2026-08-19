@@ -11,7 +11,7 @@ import { profile } from "@/data/profile";
 const title = `${profile.name} — ${profile.role}`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nvadde2.github.io/portfolio"),
+  metadataBase: new URL("https://nvadde2.github.io/portfolio-next"),
   title,
   description: profile.summary,
   openGraph: {
