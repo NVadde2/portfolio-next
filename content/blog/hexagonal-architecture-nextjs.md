@@ -6,7 +6,7 @@ description: "Ports and adapters isn't just backend/DDD folklore — here's what
 image: "/images/blog/hex-architecture-diagram.svg"
 ---
 
-"Hexagonal architecture" is one of those terms that sounds like it belongs exclusively to backend Java shops doing heavy Domain-Driven Design. I used to think so too — until I ended up building one into a Next.js frontend at work, and figured I'd write down what it actually looks like from the frontend side, since almost nothing online covers that.
+Say "hexagon" and most people picture a honeycomb before they picture software architecture. Fair — I did too, until I ended up building one into a Next.js frontend at work, and figured I'd write down what it actually looks like from the frontend side, since almost nothing online covers that.
 
 ## The quick version, if you haven't run into it
 
