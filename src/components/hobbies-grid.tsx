@@ -20,13 +20,14 @@ export function HobbiesGrid() {
               sizes="(min-width: 640px) 300px, 50vw"
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="relative z-10 flex w-full items-center justify-between gap-2 bg-gradient-to-t from-ink/70 to-transparent px-3 py-2">
+            {writeup && (
+              <span className="absolute right-2 top-2 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-accent text-paper shadow-sm transition-transform group-hover:scale-110">
+                <ReadMoreIcon className="h-3.5 w-3.5" />
+                <span className="sr-only">Read more</span>
+              </span>
+            )}
+            <div className="relative z-10 w-full bg-gradient-to-t from-ink/70 to-transparent px-3 py-2">
               <span className="text-xs font-medium text-paper">{hobby.title}</span>
-              {writeup && (
-                <span className="shrink-0 text-[10px] text-paper/80 underline underline-offset-2 group-hover:text-paper">
-                  Read more
-                </span>
-              )}
             </div>
           </>
         );
@@ -47,5 +48,19 @@ export function HobbiesGrid() {
         );
       })}
     </div>
+  );
+}
+
+function ReadMoreIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7 17L17 7M17 7H9M17 7V15"
+      />
+    </svg>
   );
 }

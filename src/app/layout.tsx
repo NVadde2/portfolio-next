@@ -8,9 +8,24 @@ import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { profile } from "@/data/profile";
 
+const title = `${profile.name} — ${profile.role}`;
+
 export const metadata: Metadata = {
-  title: `${profile.name} — ${profile.role}`,
+  metadataBase: new URL("https://nvadde2.github.io/portfolio"),
+  title,
   description: profile.summary,
+  openGraph: {
+    title,
+    description: profile.summary,
+    url: "/",
+    siteName: profile.name,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title,
+    description: profile.summary,
+  },
 };
 
 // Runs before React hydrates so the correct theme class is present on
