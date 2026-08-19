@@ -5,11 +5,11 @@ export const skillGroups = [
   },
   {
     label: "Frontend",
-    items: ["React", "Next.js", "Tailwind CSS", "HTML", "CSS", "Sass"],
+    items: ["React", "Next.js", "Zustand", "Tailwind CSS", "HTML", "CSS", "Sass"],
   },
   {
     label: "Backend & Data",
-    items: ["Node.js", "SAP HANA", "MySQL", "REST APIs"],
+    items: ["Node.js", "SAP HANA", "MySQL", "REST APIs", "Zod"],
   },
   {
     label: "Tooling",

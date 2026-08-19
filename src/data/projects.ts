@@ -8,6 +8,7 @@ export interface Project {
   codeHref?: string;
   demoHref?: string;
   deployHref?: string;
+  paperHref?: string;
   hasCaseStudy?: boolean;
   image: string;
 }
@@ -45,6 +46,7 @@ export const projects: Project[] = [
       "An NLP model that flags clickbait YouTube video titles.",
     techStack: ["Python", "TensorFlow", "NLP"],
     date: "Jun 2020",
+    paperHref: "http://ijses.com/wp-content/uploads/2020/06/95-IJSES-V4N5.pdf",
     image: "/images/projects/clickbait.png",
   },
   {

@@ -6,10 +6,13 @@ import { SkillsSection } from "@/components/skills-section";
 import { ProjectCard } from "@/components/project-card";
 import { HobbiesGrid } from "@/components/hobbies-grid";
 import { EducationList } from "@/components/education-list";
+import { BlogList } from "@/components/blog-list";
 import { projects } from "@/data/projects";
+import { getAllPosts } from "@/lib/blog";
 
 export default function Home() {
   const featured = projects.slice(0, 2);
+  const recentPosts = getAllPosts().slice(0, 2);
 
   return (
     <>
@@ -41,7 +44,17 @@ export default function Home() {
         </Link>
       </Section>
 
-      <Section index="05" title="Outside of work">
+      <Section index="05" title="Recent writing">
+        <BlogList posts={recentPosts} />
+        <Link
+          href="/blog"
+          className="mt-6 inline-block text-sm text-ink-soft underline decoration-line underline-offset-4 hover:text-accent hover:decoration-accent"
+        >
+          View all posts →
+        </Link>
+      </Section>
+
+      <Section index="06" title="Outside of work">
         <HobbiesGrid />
       </Section>
     </>

@@ -57,6 +57,16 @@ export function ProjectCard({ project }: { project: Project }) {
                 Demo
               </a>
             )}
+            {project.paperHref && (
+              <a
+                href={project.paperHref}
+                target="_blank"
+                rel="noreferrer"
+                className="text-ink-soft underline decoration-line underline-offset-4 hover:text-accent hover:decoration-accent"
+              >
+                Paper
+              </a>
+            )}
             {project.hasCaseStudy && (
               <Link
                 href={`/projects/${project.slug}`}
